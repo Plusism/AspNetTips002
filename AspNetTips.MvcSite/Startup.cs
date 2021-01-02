@@ -22,6 +22,11 @@ namespace AspNetTips.MvcSite
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddRouting(options => {
+				// ルーティングによって動的に生成されるURLを小文字にする
+				options.LowercaseUrls = true;
+			});
+
 			services.AddControllersWithViews();
 		}
 
